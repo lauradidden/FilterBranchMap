@@ -7,7 +7,7 @@ The purpose of this research project is to evaluate the usefulness, usability, a
 
 ## Project Structure
 
-### 1. `utils.py`
+#### `utils.py`
 - `format_seconds` – format durations.  
 - `format_metric_value` – format metrics consistently.  
 - Metric enrichment functions (`add_case_durations`, `add_event_counts`, `add_avg_time_between_events`).  
@@ -16,21 +16,21 @@ The purpose of this research project is to evaluate the usefulness, usability, a
 - `highlight_main_path` – mark lineage labels with 🟡.  
 - `print_summary` – print case/metric summaries.  
 
-### 2. `lineage_core.py`
+#### `lineage_core.py`
 - `get_lineage` – reconstruct lineage from a result set.  
 - `get_sibling_subsets` – get parent log/query for pie chart.  
 
-### 3. `lineage_filters.py`
+#### `lineage_filters.py`
 - `compute_case_stats` – aggregate stats per subset.  
 - `split_subsets` – divide subsets into filtered vs complement.  
 - `recursively_apply_filters` – apply filters step-by-step and collect stats.  
 
-### 4. `chart_helpers.py`
+#### `chart_helpers.py`
 - `build_case_paths` – reconstruct pass/fail filter paths per case.  
 - `get_normalized_colors` – normalize values and sample from a colorscale.  
 - `format_slice_labels` – add readable labels, highlight final path with 🟡.  
 
-### 5. `visualizations.py`
+#### `visualizations.py`
 - `query_exploration_icicle` – builds the icicle chart.  
 - `query_breakdown_pie` – builds the pie chart.  
 
