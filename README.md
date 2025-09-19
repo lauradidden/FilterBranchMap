@@ -12,7 +12,7 @@ The purpose of this research project is to evaluate the usefulness, usability, a
 - `format_metric_value` – format metrics consistently.  
 - Metric enrichment functions (`add_case_durations`, `add_event_counts`, `add_avg_time_between_events`).  
 - `METRIC_CONFIG` – central config for metrics.  
-- `build_query_maps` – build query name → object/expression mappings.  
+- `build_query_maps` – build query name to object/expression mappings.  
 - `highlight_main_path` – mark lineage labels with 🟡.  
 - `print_summary` – print case/metric summaries.  
 
