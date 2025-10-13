@@ -6,7 +6,7 @@ from IPython.display import display, clear_output
 from utils import format_metric_value, METRIC_CONFIG, print_summary
 from chart_helpers import build_case_paths, get_normalized_colors, format_slice_labels
 from lineage_core import get_lineage, get_sibling_subsets
-from lineage_filters import recursively_apply_filters
+from lineage_filters import apply_filters
 
 def query_exploration_icicle(
     result_set_name, log_view, metric="avg_case_duration_seconds", details=True
@@ -17,7 +17,7 @@ def query_exploration_icicle(
     lineage = get_lineage(log_view.query_registry.summary(), result_set_name)
 
     # Apply the sequence of filters and compute stats for each branch
-    icicle_df, main_path = recursively_apply_filters(lineage, log_view, metric)
+    icicle_df, main_path = apply_filters(lineage, log_view, metric)
 
     # All hierarchy levels are stored in Level1, Level2, ...
     path_cols = [c for c in icicle_df.columns if c.startswith("Level")]
@@ -243,7 +243,7 @@ def interactive_icicle(result_set_name, log_view):
 
     for metric in METRIC_CONFIG.keys():
         # Compute per-metric icicle data
-        icicle_df, _ = recursively_apply_filters(lineage, log_view, metric)
+        icicle_df, _ = apply_filters(lineage, log_view, metric)
         path_cols = [c for c in icicle_df.columns if c.startswith("Level")]
 
         # Build hover text (cases + formatted metric)

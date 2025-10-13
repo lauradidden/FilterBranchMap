@@ -23,7 +23,7 @@ The purpose of this research project is to evaluate the usefulness, usability, a
 #### `lineage_filters.py`
 - `compute_case_stats` – aggregate stats per subset.  
 - `split_subsets` – divide subsets into filtered vs complement.  
-- `recursively_apply_filters` – apply filters step-by-step and collect stats.  
+- `apply_filters` – apply filters step-by-step and collect stats.  
 
 #### `chart_helpers.py`
 - `build_case_paths` – reconstruct pass/fail filter paths per case.  

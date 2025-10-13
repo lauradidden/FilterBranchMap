@@ -62,7 +62,7 @@ def split_subsets(
     return new_subsets
 
 
-def recursively_apply_filters(selected_sequence_df, log_view, metric: str) -> Tuple[pd.DataFrame, List[str]]:
+def apply_filters(selected_sequence_df, log_view, metric: str) -> Tuple[pd.DataFrame, List[str]]:
     """Apply filters in lineage order and compute case stats per branch."""
     initial_log_name = selected_sequence_df.iloc[0]["source_log"]
     base_df = log_view.result_set_name_cache[initial_log_name]
